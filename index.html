@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The MARKETERS</title>
+<style>
+  html,body {
+    margin:0; padding:0;
+    font-family: 'Pretendard','Noto Sans KR',sans-serif;
+    scroll-behavior:smooth;
+    color:#111;
+    background:linear-gradient(to bottom,#fafafa,white,#fafafa);
+  }
+
+  /* ---------------- INTRO ---------------- */
+  #intro {
+    position:fixed;
+    inset:0;
+    background:black;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    z-index:999;
+  }
+  #intro img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;  /* 반응형 정렬 */
+    height: auto;
+  }  
+    #intro h1 {
+    font-size:28px;
+    max-width:600px;
+    min-height:60px;
+    margin:0 20px;
+    line-height:1.5;
+  }
+  #continueBtn {
+    margin-top:60px;
+    padding:12px 28px;
+    border-radius:999px;
+    border:none;
+    background:white;
+    color:black;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+  }
+  #continueBtn:hover { opacity:0.8; }
+
+  /* ---------------- MAIN ---------------- */
+  header,section,footer {max-width:1100px;margin:0 auto;padding:60px 20px;}
+  .nav {
+    position:sticky;top:0;
+    background:rgba(255,255,255,0.9);
+    border-bottom:1px solid #eee;
+    backdrop-filter:blur(8px);
+    padding:12px 20px;
+    display:flex;justify-content:space-between;align-items:center;
+    z-index:100;
+  }
+  .nav-links a {margin-left:20px;text-decoration:none;color:#333;font-size:14px;}
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  .pill{display:inline-flex;align-items:center;background:rgba(255,255,255,0.7);border:1px solid #ddd;border-radius:9999px;padding:6px 12px;font-size:14px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;font-weight:600;padding:12px 20px;text-decoration:none;}
+  .btn.black{background:black;color:white;}
+  .btn.outline{border:1px solid #ddd;color:black;background:white;}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:20px;}
+  .stat{background:white;border:1px solid #eee;border-radius:16px;padding:16px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,0.05);}
+  .stat .value{font-weight:800;font-size:22px;}
+  .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:40px;}
+  .feature,.step{background:white;border:1px solid #eee;border-radius:16px;padding:20px;}
+  .calculator{display:grid;gap:20px;margin-top:30px;background:white;border:1px solid #eee;border-radius:16px;padding:20px;}
+  input,textarea{width:100%;border:1px solid #ddd;border-radius:8px;padding:8px;font-size:14px;}
+  .faq details{background:white;border:1px solid #eee;border-radius:16px;padding:16px;margin-bottom:10px;}
+  footer{border-top:1px solid #eee;padding-top:40px;}
+  @media(max-width:768px){.hero{grid-template-columns:1fr;}}
+  #exchangeDashboard {
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;
+  }
+  .exchange-card {
+    background:white;
+    border:1px solid #eee;
+    border-radius:12px;
+    padding:12px;
+    text-align:center;
+    box-shadow:0 1px 2px rgba(0,0,0,0.05);
+  }
+  .exchange-card .label {font-size:13px;color:#666;}
+  .exchange-card .value {font-size:18px;font-weight:700;margin-top:4px;}
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+    <h1><img src="logo.png"></h1>
+  <h1 id="typewriter"></h1>
+  <button id="continueBtn">계속하기 ↓</button>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div><b>THE MARKETERS</b></div>
+  <div class="nav-links">
+    <a href="#model">모델</a>
+    <a href="#process">프로세스</a>
+    <a href="#faq">FAQ</a>
+    <a href="#apply" class="btn black" style="padding:6px 12px;">무료 진단</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
+  <div class="hero">
+    <div>
+      <div class="pill">중소기업 전용 · 성과연동 로열티 모델</div>
+      <h1 style="margin-top:20px;font-size:40px;">좋은 제품이 <u style="text-decoration-color:#fde047;">제값</u> 받는 세상</h1>
+      <p style="margin-top:20px;">우리는 <b>중소기업</b>만을 위한 마케팅 파트너입니다. 단기 수수료가 아니라 <b>로열티</b>로 보상받고, 고객과 함께 성장합니다.</p>
+      <div style="margin-top:20px;">
+        <a href="#apply" class="btn black">무료 진단 신청</a>
+        <a href="#model" class="btn outline">로열티 모델 보기</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="value">3~10x</div><div>광고 효율 개선</div></div>
+        <div class="stat"><div class="value">&gt;60%</div><div>재구매율 상승</div></div>
+        <div class="stat"><div class="value">90일</div><div>초기 성과 검증</div></div>
+        <div class="stat"><div class="value">0원</div><div>고정 수수료</div></div>
+        <div class="stat"><div class="value">30,317</div><div>누적 이용자수</div></div>
+        <div class="stat"><div class="value">★4.7</div><div>평점</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="stat">
+        <b>풀퍼널 대시보드 (샘플)</b><br><br>
+        CAC ₩18,000<br>ROAS 412%<br>재구매율 +23%p<br>전환율 +41%
+      </div>
+      <div id="exchangeDashboard">
+        <div class="exchange-card">
+          <div class="label">기준 통화</div>
+          <div class="value">USD → KRW</div>
+        </div>
+        <div class="exchange-card">
+          <div class="label">현재 환율</div>
+          <div class="value" id="exchangeRate">불러오는 중...</div>
+        </div>
+        <div class="exchange-card">
+          <div class="label">업데이트</div>
+          <div class="value" id="exchangeDate">-</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MODEL -->
+<section id="model">
+  <h2>로열티 기반 성장 모델</h2>
+  <p>성과 기반 보상 구조로 고객과 이해관계를 일치시킵니다.</p>
+  <div class="feature-grid">
+    <div class="feature"><b>이해관계 정렬</b><p>매출 인상분에 대해서만 보상받습니다.</p></div>
+    <div class="feature"><b>리스크 완화</b><p>고정 수수료 없이 초기 검증 중심.</p></div>
+    <div class="feature"><b>데이터 집착</b><p>기여도 측정, 대조군 설계.</p></div>
+  </div>
+
+  <!-- Calculator -->
+  <div class="calculator" id="calc">
+    <h3>로열티 시뮬레이터</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;">
+      <div><label>월 추가 매출 (₩)</label><input id="lift" type="number" value="3000000"></div>
+      <div><label>로열티율 (%)</label><input id="rate" type="number" value="8"></div>
+      <div><label>계약 기간 (개월)</label><input id="months" type="number" value="12"></div>
+    </div>
+    <div class="stats" style="margin-top:20px;">
+      <div class="stat"><div class="value" id="total">₩0</div><div>총 추가 매출</div></div>
+      <div class="stat"><div class="value" id="client">₩0</div><div>귀사 수익</div></div>
+      <div class="stat"><div class="value" id="partner">₩0</div><div>로열티</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <h2>자주 묻는 질문</h2>
+  <div class="faq">
+    <details><summary>왜 중소기업만 대상으로 하나요?</summary><p>대기업은 이미 강력한 브랜드력과 유통망을 가지고 있습니다. 우리는 숨은 잠재력을 가진 중소기업에 집중합니다.</p></details>
+    <details><summary>로열티는 어떻게 계산하나요?</summary><p>기본선 대비 증가한 매출에만 로열티율을 적용합니다.</p></details>
+    <details><summary>물은 항상 자동이온화되는데 왜 전류가 안 통하나요?</summary><p>이온의 양이 아주 미미하기 때문입니다.</p></details>
+    <details><summary>2학년 선택과목 뭐 골라야하나요?</summary><p>자신의 진로에 맞게 고르면 성적을 망칠 수 있습니다.</p></details>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section id="apply" style="background:black;color:white;border-radius:24px;">
+  <h3>무료 성장 진단 신청</h3>
+  <form id="applyForm">
+    <input placeholder="회사명/브랜드명">
+    <input placeholder="담당자 이름">
+    <input placeholder="이메일">
+    <input placeholder="연락처">
+    <textarea placeholder="현재 상황과 목표를 간단히 적어주세요"></textarea>
+    <button type="submit" class="btn black" style="background:white;color:black;">제출하기</button>
+  </form>
+  <p style="margin-top:10px;font-size:12px;color:#aaa;">* 실제 계약은 업종·원가구조·LTV에 따라 달라집니다.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© <span id="year"></span> HO Corp. All rights reserved.</p>
+</footer>
+
+<script>
+/* ---------- INTRO 타자 효과 ---------- */
+const messages = [
+  "당신의 브랜드, 우리의 전략으로 세상에 빛나다",
+  "작은 기업의 큰 가능성을 현실로",
+  "중소기업의 성장 파트너",
+  "당신의 이야기를 세상에 전하는 마케팅 전문가",
+  "브랜드의 첫걸음, 함께 만들어가는 성공의 신화",
+  "진심이 통하는 마케팅, 실적으로 증명합니다",
+  "작지만 강한 브랜드, 그 뒤엔 우리가 있습니다",
+  "더 크게, 더 멀리, 당신의 가치를 퍼뜨립니다",
+  "데이터와 감성이 만나는 마케팅",
+  "중소기업의 성장엔진, 더 마케터즈"
+];
+const typewriter = document.getElementById('typewriter');
+let msgIndex=0, charIndex=0, deleting=false;
+
+function typeEffect(){
+  const text = messages[msgIndex];
+  if(!deleting){
+    typewriter.textContent = text.substring(0,charIndex+1);
+    charIndex++;
+    if(charIndex === text.length){
+      deleting = true;
+      setTimeout(typeEffect,1500);
+      return;
+    }
+  } else {
+    typewriter.textContent = text.substring(0,charIndex-1);
+    charIndex--;
+    if(charIndex === 0){
+      deleting = false;
+      msgIndex = Math.floor(Math.random()*messages.length);
+    }
+  }
+  setTimeout(typeEffect, deleting?40:70);
+}
+typeEffect();
+
+/* ---------- 인트로 종료 + HERO로 이동 ---------- */
+document.getElementById('continueBtn').addEventListener('click',()=>{
+  const intro = document.getElementById('intro');
+  intro.style.transition='opacity 1s';
+  intro.style.opacity='0';
+  setTimeout(()=>{
+    intro.style.display='none';
+    document.getElementById('hero').scrollIntoView({behavior:'smooth'});
+  },1000);
+});
+
+/* ---------- Calculator ---------- */
+function calcRoyalty(){
+  const lift = parseFloat(document.getElementById('lift').value)||0;
+  const rate = parseFloat(document.getElementById('rate').value)||0;
+  const months = parseFloat(document.getElementById('months').value)||0;
+  const total = lift * months;
+  const partner = Math.round(total * (rate/100));
+  const client = total - partner;
+  document.getElementById('total').textContent = "₩" + total.toLocaleString();
+  document.getElementById('partner').textContent = "₩" + partner.toLocaleString();
+  document.getElementById('client').textContent = "₩" + client.toLocaleString();
+}
+['lift','rate','months'].forEach(id=>{
+  document.getElementById(id).addEventListener('input', calcRoyalty);
+});
+calcRoyalty();
+
+/* ---------- Apply Form ---------- */
+document.getElementById('applyForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  alert('제출 완료! 5영업일 내 리포트를 드립니다.');
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+
+/* ---------- 환율 대시보드 ---------- */
+async function loadExchange(){
+  try {
+    const res = await fetch("https://api.frankfurter.app/latest?from=USD&to=KRW");
+    const data = await res.json();
+    const rate = data.rates.KRW;
+    const date = data.date;
+    document.getElementById('exchangeRate').textContent =
+      rate.toLocaleString(undefined,{maximumFractionDigits:2}) + " ₩";
+    document.getElementById('exchangeDate').textContent = "2025-11-10";
+  } catch (e) {
+    console.error(e);
+    document.getElementById('exchangeRate').textContent = "불러오기 실패";
+    document.getElementById('exchangeDate').textContent = "-";
+  }
+}
+loadExchange();
+</script>
+</body>
+</html>
